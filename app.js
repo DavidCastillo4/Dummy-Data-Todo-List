@@ -18,12 +18,14 @@ async function logTodos() {
 async function populateTodos() {
   await fetchTodos();
   let ol = document.createElement('ol');
+  ol.style.marginTop ="30px"
   for (let i = 0; i < arrayOfTodos.length; i++) {
     let li = document.createElement('li');
     let tf = arrayOfTodos[i].completed
     if (!tf) {
-      li.style.color = "red"
+      li.style.backgroundColor  = "#ffb3b3"
     }
+    li.style.border = '1px solid black';
     let txt = 'id=' + arrayOfTodos[i].id
       + ';userId=' + arrayOfTodos[i].userId
       + ';completed=' + tf
@@ -31,6 +33,6 @@ async function populateTodos() {
     li.innerHTML = txt;
     ol.appendChild(li);
   }
-  document.body.appendChild(ol)
+  document.getElementById('btns').insertAdjacentElement("afterend",ol)  
 }
 
