@@ -4,7 +4,8 @@ let isFetchComplete = 0;
 
 async function fetchTodos() {
   if (isFetchComplete == 0) {
-    let response = await fetch('https://jsonplaceholder.typicode.com/todos')
+    //let response = await fetch('https://jsonplaceholder.typicode.com/todos')
+    let response = await fetch('people.json')
     arrayOfTodos = await response.json();
     isFetchComplete = 1;
   }
