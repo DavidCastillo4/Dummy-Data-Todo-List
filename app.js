@@ -1,4 +1,3 @@
-
 let arrayOfTodos
 let isFetchComplete = 0;
 
